@@ -6,7 +6,7 @@ main:
     image: "./assets/img/pub/li2026ddtracking.jpg"
     year: "2026"
     notes: "Medical Image Analysis (Elsevier)"
-    tags: "Tractography, Generative Model, Deep Learning, First/Co-First Author, Journal"
+    tags: "Diffusion MRI, Tractography, Deep Learning, First/Co-First Author, Journal"
     bibtex: "/assets/bibs/li2026ddtracking.bib"
 
   - title: "Cross-Population White Matter Atlas Creation for Concurrent Mapping of Brain Connections in Neonates and Adults with Diffusion MRI Tractography"
@@ -16,7 +16,7 @@ main:
     image: "./assets/img/pub/zhang2026cross.jpg"
     year: "2026"
     notes: "Fundamental Research (Elsevier)"
-    tags: "Tractography, Brain Atlas, Population Study, First/Co-First Author, Journal"
+    tags: "Diffusion MRI, Tractography, Structural Connectivity, Population and Clinical Studies, First/Co-First Author, Journal"
     bibtex: "/assets/bibs/zhang2026cross.bib"
 
   - title: "A Diffusion MRI Tractography Atlas for Concurrent White Matter Mapping Across Eastern and Western Populations"
@@ -26,7 +26,7 @@ main:
     image: "./assets/img/pub/li2024diffusion.png"
     year: "2024"
     notes: "Scientific Data (Springer)"
-    tags: "Tractography, Brain Atlas, Population Study, First/Co-First Author, Journal"
+    tags: "Diffusion MRI, Tractography, Structural Connectivity, Population and Clinical Studies, First/Co-First Author, Journal"
     bibtex: "/assets/bibs/li2024diffusion.bib"
 
   - title: "Study of Sex Differences in the Whole Brain White Matter using Diffusion MRI Tractography and Suprathreshold Fiber Cluster Statistics"
@@ -36,7 +36,7 @@ main:
     image: "./assets/img/pub/zhang2026study.jpg"
     year: "2026"
     notes: "Neuroimage: Clinical (Elsevier)"
-    tags: "Tractography, Population Study, Clinical Study, Journal"
+    tags: "Diffusion MRI, Tractography, Structural Connectivity, Population and Clinical Studies, Journal"
     bibtex: "/assets/bibs/zhang2026study.bib"
 
   - title: "Free Water Corrected Diffusion Magnetic Resonance Imaging Reveals Microstructural Alterations in Corpus Callosum Subregions of Preschool Children With Autism"
@@ -46,7 +46,7 @@ main:
     image: "./assets/img/pub/cao2025free.jpg"
     year: "2025"
     notes: "Human Brain Mapping (Wiley Online Library)"
-    tags: "Tractography, Computational Neuroscience, Journal"
+    tags: "Diffusion MRI, Tractography, Population and Clinical Studies, Journal"
     bibtex: "/assets/bibs/cao2025free.bib"
 
   - title: "AGFS-Tractometry: A Novel Atlas-Guided Fine-Scale Tractometry Approach for Enhanced Along-Tract Group Statistical Comparison using Diffusion MRI Tractography"
@@ -56,7 +56,7 @@ main:
     image: "./assets/img/pub/zheng2025agfs.jpg"
     year: "2025"
     notes: "Medical Image Analysis (Elsevier)"
-    tags: "Tractography, Computational Neuroscience, Journal"
+    tags: "Diffusion MRI, Tractography, Population and Clinical Studies, Computational Neuroimaging, Journal"
     bibtex: "/assets/bibs/zheng2025agfs.bib"
 
   - title: "DMVFC: Deep Learning Based Functionally Consistent Tractography Fiber Clustering using Multimodal Diffusion MRI and Functional MRI"
@@ -66,7 +66,7 @@ main:
     image: "./assets/img/pub/guo2025dmvfc.jpg"
     year: "2025"
     notes: "IEEE Journal of Selected Topics in Signal Processing (IEEE)"
-    tags: "Tractography, Computational Neuroscience, Journal"
+    tags: "Diffusion MRI, Tractography, Deep Learning, Journal"
     bibtex: "/assets/bibs/guo2025dmvfc.bib"
 
   - title: "A Novel Streamline-Based Diffusion MRI Tractography Registration Method with Probabilistic Keypoint Detection"
@@ -76,7 +76,7 @@ main:
     image: "./assets/img/pub/wang2025novel.jpg"
     year: "2025"
     notes: "MICCAI 2025 (Springer)"
-    tags: "Tractography, Computational Neuroscience, Conference"
+    tags: "Diffusion MRI, Tractography, Deep Learning, Conference"
     bibtex: "/assets/bibs/wang2025novel.bib"
 
   - title: "Segmentation Methods for Diffusion Magnetic Resonance Imaging Tractography: A Survey"
@@ -86,7 +86,7 @@ main:
     image: "./assets/img/pub/zhang2025segmentation.png"
     year: "2025"
     notes: "Journal of Data Acquisition and Processing"
-    tags: "Tractography, Computational Neuroscience, Journal"
+    tags: "Diffusion MRI, Tractography, Computational Neuroimaging, Journal"
     bibtex: "/assets/bibs/zhang2025segmentation.bib"
 
   - title: "A Novel Deep Learning Tractography Fiber Clustering Framework for Functionally Consistent White Matter Parcellation Using Multimodal Diffusion MRI and Functional MRI"
@@ -96,7 +96,7 @@ main:
     image: "./assets/img/pub/wangjin2025novel.png"
     year: "2025"
     notes: "ISBI 2025 (IEEE)"
-    tags: "Tractography, Computational Neuroscience, Conference"
+    tags: "Diffusion MRI, Tractography, Deep Learning, Conference"
     bibtex: "/assets/bibs/wangjin2025novel.bib"
 
   - title: "When Diffusion MRI Meets Diffusion Model: A Novel Deep Generative Model for Diffusion MRI Generation"
@@ -106,5 +106,5 @@ main:
     image: "./assets/img/pub/zhu2024diffusion.png"
     year: "2024"
     notes: "MICCAI 2024 (Springer)"
-    tags: "Diffusion MRI, Diffusion Model, Conference"
+    tags: "Diffusion MRI, Deep Learning, Conference"
     bibtex: "/assets/bibs/zhu2024diffusion.bib"

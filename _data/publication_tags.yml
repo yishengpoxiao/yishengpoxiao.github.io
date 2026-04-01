@@ -1,0 +1,12 @@
+preferred_topics:
+  - Diffusion MRI
+  - Tractography
+  - Structural Connectivity
+  - Computational Neuroimaging
+  - Deep Learning
+  - Population and Clinical Studies
+
+excluded_topics:
+  - First/Co-First Author
+  - Conference
+  - Journal

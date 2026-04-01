@@ -2,7 +2,7 @@
 layout: homepage
 ---
 
-<div id="about-me" class="section-block overview-grid">
+<div id="about-me" class="section-block">
 <div class="card card-feature" markdown="1">
 
 ## About Me
@@ -10,23 +10,9 @@ layout: homepage
 I am a **Ph.D. candidate** at the **[University of Electronic Science and Technology of China](https://en.uestc.edu.cn/)**, under the supervision of **[Prof. Fan Zhang](https://scholar.google.com/citations?user=kTd978wAAAAJ)**.
 
 {:.profile-lead}
-My research focuses on using **diffusion MRI** and **tractography** to model and analyze the structural connectivity of the human
-brain. I am particularly interested in applying **deep learning** to medical imaging data to better understand brain networks.
-My work is interdisciplinary, at the intersection of **computational neuroscience**, **neuroimaging**, and **artificial intelligence**, with an emphasis on practical analytical approaches.
+My research focuses on **diffusion MRI** and **tractography** for studying **brain structural connectivity** and **white matter organization**. I am particularly interested in developing **deep learning** and **computational methods** for medical image analysis at the intersection of **computational neuroscience**, **neuroimaging**, and **artificial intelligence**.
 
-</div>
-
-<div class="card card-compact" markdown="1">
-
-## Research Interests
-
-{:.research-list}
-- **Diffusion MRI**
-- **Tractography**
-- **Deep Learning**
-- **Computational Neuroscience**
-- **Neuroimaging**
-
+{% include research_interests.md data_file="all_publications" %}
 </div>
 </div>
 
