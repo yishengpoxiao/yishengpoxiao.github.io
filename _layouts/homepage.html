@@ -59,29 +59,29 @@
 
     <!-- Main Content -->
     <div id="main-content"{% unless show_intro %} style="display: block; opacity: 1;"{% endunless %}>
-        <div class="wrapper">
-        <header>
+        <div class="wrapper page-shell">
+        <header class="site-sidebar">
+        <div class="sidebar-card sidebar-profile">
         {% if site.avatar %}
         <a class="image avatar"><img src="{{ site.avatar }}" alt="avatar" /></a>
         {% endif %}
 
         <h1>{{ site.title }}</h1>
 
+        <div class="sidebar-meta">
         {% if site.position %}
-        <position style="font-size:1.10rem;">{{ site.position }}</position>
-        <br>
+        <position>{{ site.position }}</position>
         {% endif %}
         {% if site.affiliation %}
         <a href="{{ site.affiliation_link }}" rel="noopener">
             <autocolor>{{ site.affiliation }}</autocolor>
         </a>
-        <br>
         {% endif %}
         {% if site.email %}
         <email>{{ site.email }}</email>
         {% endif %}
+        </div>
 
-        <br><br>
         <div class="social-icons">
             {% for social in site.social %}
             <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" title="{{ social.platform }}">
@@ -89,32 +89,38 @@
             </a>
             {% endfor %}
         </div>
-        <br>
+        </div>
 
-        <div id="mobile-menu-btn" class="mobile-menu-btn">
+        <nav class="sidebar-card sidebar-nav" aria-label="Primary">
+        <div id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
 
-        <ul>
+        <ul id="site-nav">
             {% if is_all_publications_page %}
             <li><a href="{{ '/#about-me' | relative_url }}">About Me</a></li>
+            <li><a href="{{ '/#experience' | relative_url }}">Experience</a></li>
             <li><a href="{{ '/#news' | relative_url }}">News</a></li>
             <li><a href="{{ '/#publications' | relative_url }}">Selected Publications</a></li>
+            <li><a href="{{ '/#awards' | relative_url }}">Awards</a></li>
             <li><a href="#all-publications">All Publications</a></li>
             {% else %}
             <li><a href="#about-me">About Me</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#news">News</a></li>
             <li><a href="#publications">Selected Publications</a></li>
+            <li><a href="#awards">Awards</a></li>
             <li><a href="{{ '/all-publications.html' | relative_url }}">All Publications</a></li>
             {% endif %}
         </ul>
+        </nav>
 
         </header>
 
 
-        <section>
+        <section class="site-main">
         {{ content }}
         <br>
         {% if site.enable_footnote %}
@@ -150,11 +156,15 @@
         document.addEventListener("DOMContentLoaded", function () {
             const menuBtn = document.getElementById('mobile-menu-btn');
             const header = document.querySelector('header');
+            const nav = document.getElementById('site-nav');
 
             // 点击按钮切换菜单状态
             menuBtn.addEventListener('click', function () {
                 header.classList.toggle('nav-open');
                 menuBtn.classList.toggle('active');
+                const isOpen = header.classList.contains('nav-open');
+                menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                nav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
             });
 
             // 点击导航链接后自动收起菜单
@@ -163,6 +173,8 @@
                 link.addEventListener('click', function () {
                     header.classList.remove('nav-open');
                     menuBtn.classList.remove('active');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    nav.setAttribute('aria-hidden', 'true');
                 });
             });
         });

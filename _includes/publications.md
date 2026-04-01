@@ -14,9 +14,9 @@
   {% assign auto_filters = collected_tags | split: "," | uniq %}
 {% endif %}
 
-<h2 id="{{ section_id }}" style="margin: 2px 0px -15px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+<h2 id="{{ section_id }}" class="section-heading">
   {{ section_title }}
-  <small style="font-size: 0.8rem; font-weight: 400; margin-left: 1em;">
+  <small class="section-heading-meta">
     {% if show_internal_link %}
     <a href="{{ '/all-publications.html' | relative_url }}">(View all publications)</a>
     {% endif %}
@@ -51,22 +51,22 @@
 
 <li data-tags="{{ link.tags | escape }}">
 <div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+  <div class="pub-media col-sm-3 abbr">
   {% if link.image %}
   {% if primary_link %}
   <a href="{{ primary_link }}" target="_blank" rel="noopener noreferrer" aria-label="Open publication: {{ link.title }}">
-    <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width: 100; height: auto;">
+    <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" alt="{{ link.title }}">
   </a>
   {% else %}
-    <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width: 100; height: auto;">
+    <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" alt="{{ link.title }}">
   {% endif %}
   {% if link.conference_short %}
   <abbr class="badge">{{ link.conference_short }}</abbr>
   {% endif %}
   {% endif %}
   </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title">
+  <div class="pub-content col-sm-9">
+      <div class="title publication-title">
         {% if primary_link %}
         <a href="{{ primary_link }}" target="_blank" rel="noopener noreferrer">{{ link.title }}</a>
         {% else %}
@@ -101,7 +101,6 @@
   </div>
 </div>
 </li>
-<br>
 
 {% endfor %}
 
