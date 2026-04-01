@@ -5,7 +5,7 @@ main:
     code: "https://doi.org/10.57760/sciencedb.17354"
     image: "./assets/img/pub/East-West WM Atlas.png"
     notes: "Scientific Data (Nature)"
-    tags: "Diffusion MRI, White Matter Atlas, Cross-population Study"
+    tags: "Tractography, White Matter Atlas, First/Co-First Author, Journal"
     bibtex: "/assets/bibs/li2024diffusion.bib"
 
   - title: "DDTracking: A Diffusion Model-Based Deep Generative Framework with Local-Global Spatiotemporal Modeling for Diffusion MRI Tractography "
@@ -14,7 +14,7 @@ main:
     code: "https://github.com/yishengpoxiao/DDTracking"
     image: "./assets/img/pub/ddtracking.jpg"
     notes: "Medical Image Analysis (Elsevier)"
-    tags: "Diffusion MRI, Deep Learning, Generative Model, Tractography"
+    tags: "Tractography, Diffusion Model, First/Co-First Author, Journal"
     bibtex: "/assets/bibs/li2026ddtracking.bib"
 
   - title: "Cross-Population White Matter Atlas Creation for Concurrent Mapping of Brain Connections in Neonates and Adults with Diffusion MRI Tractography"
@@ -23,5 +23,14 @@ main:
     code: "https://github.com/azurezhangwei/NABA-Atlas"
     image: "./assets/img/pub/NABA.jpg"
     notes: "Fundamental Research (Elsevier)"
-    tags: "Diffusion MRI, White Matter Atlas, Brain Connectivity, Cross-population"
+    tags: "Tractography, White Matter Atlas, First/Co-First Author, Journal"
     bibtex: "/assets/bibs/zhang2026cross.bib"
+  
+  - title: "When Diffusion MRI Meets Diffusion Model: A Novel Deep Generative Model for Diffusion MRI Generation"
+    authors: "Xi Zhu, Wei Zhang, <strong>Yijie Li*</strong>, ..., Fan Zhang✉"
+    url: "https://link.springer.com/chapter/10.1007/978-3-031-72069-7_50"
+    code: "https://github.com/XiZhu-UE/Diffusion-model-meet-dMRI"
+    image: "./assets/img/pub/Diffusion_meets_dmri.png"
+    notes: "MICCAI 2024 (Springer)"
+    tags: "Diffusion MRI, Diffusion Model, Conference"
+    bibtex: "/assets/bibs/zhu2024diffusion.bib"

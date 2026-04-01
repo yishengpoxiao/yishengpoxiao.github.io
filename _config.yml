@@ -56,7 +56,7 @@ social:
  
 # Images (e.g., your profile picture and your website's favicon)
 # "favicon" and "favicon_dark" are used for the light and dark modes, respectively.
-avatar: ./assets/img/favicon.ico # Replace with your profile picture
+avatar: ./assets/img/portrait.png # Replace with your profile picture
 favicon: ./assets/img/uestc.png
 favicon_dark: ./assets/img/uestc.png
 

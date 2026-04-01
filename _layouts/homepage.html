@@ -98,12 +98,14 @@
         </div>
 
         <ul>
-            <li><a href="#about-me">About Me</a></li>
-            <li><a href="#news">News</a></li>
             {% if is_all_publications_page %}
+            <li><a href="{{ '/#about-me' | relative_url }}">About Me</a></li>
+            <li><a href="{{ '/#news' | relative_url }}">News</a></li>
             <li><a href="{{ '/#publications' | relative_url }}">Selected Publications</a></li>
             <li><a href="#all-publications">All Publications</a></li>
             {% else %}
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#news">News</a></li>
             <li><a href="#publications">Selected Publications</a></li>
             <li><a href="{{ '/all-publications.html' | relative_url }}">All Publications</a></li>
             {% endif %}
