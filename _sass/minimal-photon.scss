@@ -1321,6 +1321,26 @@ footer {
 
 .sidebar-meta a {
     border-bottom: none;
+    justify-self: center;
+    transition: color 0.2s ease, opacity 0.2s ease;
+    text-decoration: none;
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.12em;
+}
+
+.sidebar-meta a autocolor {
+    transition: color 0.2s ease;
+}
+
+.sidebar-meta a:hover,
+.sidebar-meta a:focus-visible {
+    text-decoration: underline;
+}
+
+.sidebar-meta a:hover autocolor,
+.sidebar-meta a:focus-visible autocolor {
+    color: #8C0000;
 }
 
 .social-icons a,
@@ -1430,6 +1450,10 @@ h2[id] {
     font-size: 1.04rem;
     line-height: 1.9;
     color: #4a4a4f;
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: left;
+    hyphens: auto;
 }
 
 .research-list {
@@ -1447,6 +1471,12 @@ h2[id] {
     border: 1px solid rgba(140, 0, 0, 0.08);
     background: linear-gradient(180deg, #faf7f1 0%, #f6f1e9 100%);
     font-weight: 500;
+    box-shadow: 0 12px 28px -24px rgba(0, 0, 0, 0.25);
+    transition:
+        transform 0.24s ease,
+        box-shadow 0.24s ease,
+        border-color 0.24s ease,
+        background-color 0.24s ease;
 }
 
 .section-heading {
@@ -1643,6 +1673,20 @@ h2[id] {
     color: #4e4e55;
 }
 
+.publications .publication-year-inline {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.55rem;
+    padding: 0.08rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(140, 0, 0, 0.07);
+    color: #8C0000;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    vertical-align: middle;
+}
+
 .publications .periodical {
     margin-bottom: 0.8rem;
     color: #6e6e73;
@@ -1663,6 +1707,94 @@ h2[id] {
 
 .award-item {
     border-bottom-color: rgba(140, 0, 0, 0.08);
+}
+
+.hover-panel {
+    position: relative;
+    transition:
+        transform 0.24s ease,
+        box-shadow 0.24s ease,
+        border-color 0.24s ease,
+        background-color 0.24s ease;
+    will-change: transform;
+}
+
+.experience-item.hover-panel {
+    border: 1px solid rgba(140, 0, 0, 0.08);
+    box-shadow: 0 12px 28px -24px rgba(0, 0, 0, 0.35);
+}
+
+.publications ol.bibliography li.publication-item.hover-panel {
+    margin-bottom: 18px;
+    padding: 22px;
+    border: 1px solid rgba(140, 0, 0, 0.08);
+    border-radius: 24px;
+    background: linear-gradient(180deg, #fcfbf8 0%, #f7f3ec 100%);
+    box-shadow: 0 12px 28px -24px rgba(0, 0, 0, 0.28);
+}
+
+.publications ol.bibliography li.publication-item.hover-panel:last-child {
+    margin-bottom: 0;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(140, 0, 0, 0.08);
+}
+
+.news-ticker li.news-item.hover-panel {
+    margin-bottom: 0;
+    padding: 14px 16px;
+    border: 1px solid rgba(140, 0, 0, 0.08);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 10px 24px -24px rgba(0, 0, 0, 0.3);
+}
+
+.news-ticker li.news-item.hover-panel:last-child {
+    padding-bottom: 14px;
+}
+
+.award-item.hover-panel {
+    margin-bottom: 0.9rem;
+    padding: 1.1rem 1rem;
+    border: 1px solid rgba(140, 0, 0, 0.08);
+    border-radius: 20px;
+    border-bottom: 1px solid rgba(140, 0, 0, 0.08);
+    background: linear-gradient(180deg, #fffdfa 0%, #f7f2ea 100%);
+    box-shadow: 0 12px 28px -24px rgba(0, 0, 0, 0.25);
+}
+
+.award-item.hover-panel:last-child {
+    margin-bottom: 0;
+    padding-bottom: 1.1rem;
+}
+
+@media (hover: hover) {
+    .research-list li:hover {
+        transform: translateY(-4px);
+        border-color: rgba(140, 0, 0, 0.18);
+        box-shadow: 0 18px 36px -24px rgba(140, 0, 0, 0.35);
+    }
+
+    .hover-panel:hover {
+        transform: translateY(-4px);
+        border-color: rgba(140, 0, 0, 0.18);
+        box-shadow: 0 18px 36px -24px rgba(140, 0, 0, 0.35);
+    }
+
+    .publication-item.hover-panel:hover .abbr .teaser,
+    .publication-item.hover-panel:focus-within .abbr .teaser {
+        transform: scale(1.05);
+    }
+
+    .publication-item.hover-panel:hover .abbr::after,
+    .publication-item.hover-panel:focus-within .abbr::after {
+        opacity: 1;
+    }
+}
+
+.hover-panel:focus-within {
+    transform: translateY(-4px);
+    border-color: rgba(140, 0, 0, 0.18);
+    box-shadow: 0 18px 36px -24px rgba(140, 0, 0, 0.35);
 }
 
 #back-to-top {
@@ -1805,6 +1937,11 @@ screen and (max-width: 960px) {
 
 @media print,
 screen and (max-width: 640px) {
+    .profile-lead {
+        text-align: left;
+        hyphens: manual;
+    }
+
     .section-heading-meta {
         width: 100%;
     }

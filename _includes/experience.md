@@ -3,7 +3,7 @@
 <div class="experience">
   <ol class="experience-list">
     {% for item in site.data.experience.main %}
-    <li class="experience-item">
+    <li class="experience-item hover-panel">
       <div class="experience-logo">
         <img src="{{ item.image }}" alt="{{ item.title }}" class="logo-img">
       </div>

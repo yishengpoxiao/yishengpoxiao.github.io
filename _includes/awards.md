@@ -4,7 +4,7 @@
   {% if site.data.awards.main and site.data.awards.main.size > 0 %}
   <ol class="award-list">
     {% for item in site.data.awards.main %}
-    <li class="award-item">
+    <li class="award-item hover-panel">
       <div class="award-date">{{ item.date }}</div>
       <div class="award-body">
         <div class="award-title">{{ item.title }}</div>

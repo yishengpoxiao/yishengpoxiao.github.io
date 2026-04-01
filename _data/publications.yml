@@ -5,8 +5,8 @@ main:
     code: "https://doi.org/10.57760/sciencedb.17354"
     # page: "#"
     image: "./assets/img/pub/li2024diffusion.png"
+    year: "2024"
     notes: "Scientific Data (Springer)"
-    tags: "Diffusion MRI, White Matter Atlas, Cross-population Study"
     bibtex: "/assets/bibs/li2024diffusion.bib"
 
   - title: "DDTracking: A Diffusion Model-Based Deep Generative Framework with Local-Global Spatiotemporal Modeling for Diffusion MRI Tractography "
@@ -14,8 +14,8 @@ main:
     url: "https://www.sciencedirect.com/science/article/pii/S1361841526000368"
     code: "https://github.com/yishengpoxiao/DDTracking"
     image: "./assets/img/pub/li2026ddtracking.jpg"
+    year: "2026"
     notes: "Medical Image Analysis (Elsevier)"
-    tags: "Diffusion MRI, Deep Learning, Generative Model, Tractography"
     bibtex: "/assets/bibs/li2026ddtracking.bib"
 
   - title: "Cross-Population White Matter Atlas Creation for Concurrent Mapping of Brain Connections in Neonates and Adults with Diffusion MRI Tractography"
@@ -23,6 +23,6 @@ main:
     url: "https://www.sciencedirect.com/science/article/pii/S2667325826000312"
     code: "https://github.com/azurezhangwei/NABA-Atlas"
     image: "./assets/img/pub/zhang2026cross.jpg"
+    year: "2026"
     notes: "Fundamental Research (Elsevier)"
-    tags: "Diffusion MRI, White Matter Atlas, Brain Connectivity, Cross-population"
     bibtex: "/assets/bibs/zhang2026cross.bib"

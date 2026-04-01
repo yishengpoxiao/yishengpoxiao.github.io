@@ -6,12 +6,15 @@
 {% assign show_filters = include.show_filters %}
 {% assign filter_labels = include.filter_labels | default: "" | split: "|" %}
 {% assign auto_filters = "" | split: "" %}
+{% assign pinned_end_filters = "First/Co-First Author|Conference|Journal" | split: "|" %}
 {% assign enable_pagination = include.enable_pagination %}
 {% assign items_per_page = include.items_per_page | default: 5 %}
 
 {% if show_filters and include.filter_labels == nil %}
-  {% capture collected_tags %}{% for publication in publications %}{{ publication.tags | append: "," }}{% endfor %}{% endcapture %}
+  {% capture collected_tags %}{% for publication in publications %}{{ publication.tags | default: "" | replace: ", ", "," | replace: " ,", "," | append: "," }}{% endfor %}{% endcapture %}
   {% assign auto_filters = collected_tags | split: "," | uniq %}
+  {% capture ordered_auto_filters %}{% for filter_label in auto_filters %}{% assign trimmed_label = filter_label | strip %}{% unless trimmed_label == "" or pinned_end_filters contains trimmed_label %}{{ trimmed_label }}|{% endunless %}{% endfor %}{% for pinned_label in pinned_end_filters %}{% if auto_filters contains pinned_label %}{{ pinned_label }}|{% endif %}{% endfor %}{% endcapture %}
+  {% assign auto_filters = ordered_auto_filters | split: "|" %}
 {% endif %}
 
 <h2 id="{{ section_id }}" class="section-heading">
@@ -49,7 +52,7 @@
 {% for link in publications %}
 {% assign primary_link = link.url | default: link.page | default: link.pdf %}
 
-<li data-tags="{{ link.tags | escape }}">
+<li class="publication-item hover-panel" data-tags="{{ link.tags | escape }}">
 <div class="pub-row">
   <div class="pub-media col-sm-3 abbr">
   {% if link.image %}
@@ -73,7 +76,12 @@
         {{ link.title }}
         {% endif %}
       </div>
-      <div class="author">{{ link.authors }}</div>
+      <div class="author">
+        {{ link.authors }}
+        {% if link.year %}
+        <span class="publication-year-inline">{{ link.year }}</span>
+        {% endif %}
+      </div>
       {% if link.conference %}
       <div class="periodical"><em>{{ link.conference }}</em>
       </div>

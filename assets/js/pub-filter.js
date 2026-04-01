@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const publicationSections = document.querySelectorAll(".publications");
+    const url = new URL(window.location.href);
+    const requestedFilter = (url.searchParams.get("filter") || "").trim();
 
     publicationSections.forEach(section => {
         const filters = Array.from(section.querySelectorAll(".filters .btn"));
@@ -10,6 +12,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let activeFilter = "*";
         let currentPage = 1;
+
+        function findMatchingFilter(value) {
+            if (!value) {
+                return null;
+            }
+
+            return filters.find(filter => {
+                const filterValue = (filter.getAttribute("data-filter") || "").trim();
+                return filterValue.toLowerCase() === value.toLowerCase();
+            }) || null;
+        }
+
+        function setActiveFilter(nextFilter) {
+            activeFilter = nextFilter;
+            filters.forEach(button => {
+                button.classList.toggle("active", (button.getAttribute("data-filter") || "*") === nextFilter);
+            });
+        }
 
         function getFilteredPublications() {
             return publications.filter(publication => {
@@ -99,13 +119,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
         filters.forEach(filter => {
             filter.addEventListener("click", function () {
-                filters.forEach(button => button.classList.remove("active"));
-                this.classList.add("active");
-                activeFilter = this.getAttribute("data-filter") || "*";
+                const nextFilter = this.getAttribute("data-filter") || "*";
+                setActiveFilter(nextFilter);
                 currentPage = 1;
+
+                if (nextFilter === "*") {
+                    url.searchParams.delete("filter");
+                } else {
+                    url.searchParams.set("filter", nextFilter);
+                }
+
+                if (section.id) {
+                    url.hash = section.id;
+                }
+
+                window.history.replaceState({}, "", url.toString());
                 render();
             });
         });
+
+        const initialFilterButton = findMatchingFilter(requestedFilter);
+        if (initialFilterButton) {
+            setActiveFilter(initialFilterButton.getAttribute("data-filter") || "*");
+        }
 
         render();
     });

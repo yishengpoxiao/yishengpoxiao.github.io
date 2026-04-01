@@ -128,6 +128,7 @@ def main():
         if 'code' in entry: yml_entry['code'] = entry['code']
         if 'page' in entry: yml_entry['page'] = entry['page']
         if 'image' in entry: yml_entry['image'] = entry['image']
+        if 'year' in entry: yml_entry['year'] = entry['year']
         if 'notes' in entry: yml_entry['notes'] = entry['notes']
         if 'tags' in entry: yml_entry['tags'] = entry['tags']
 
@@ -150,7 +151,7 @@ def main():
             f.write(f"  - title: \"{entry['title']}\"\n")
             f.write(f"    authors: \"{entry['authors']}\"\n")
 
-            for key in ['url', 'code', 'page', 'image', 'notes', 'tags', 'conference', 'bibtex']:
+            for key in ['url', 'code', 'page', 'image', 'year', 'notes', 'tags', 'conference', 'bibtex']:
                 if key in entry:
                     val = entry[key]
                     val = val.replace('"', '\\"')
