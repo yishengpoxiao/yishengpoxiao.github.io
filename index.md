@@ -34,7 +34,7 @@ My research focuses on **diffusion MRI**, **tractography**, and **deep learning 
 </div>
 
 <div class="card">
-{% include publications.md %}
+{% include publications.md title="Selected Publications" section_id="publications" show_internal_link=true %}
 </div>
 
 <!-- <div class="card" markdown="1">

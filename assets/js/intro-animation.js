@@ -1,4 +1,5 @@
 const texts = ["Create Explore Expand Conquer"]; // 循环的文字内容
+const introSeenKey = "homepage_intro_seen";
 
 const typewriterElement = document.getElementById("typewriter");
 const introPage = document.getElementById("intro-page");
@@ -6,15 +7,26 @@ const mainContent = document.getElementById("main-content");
 
 let textIndex = 0; // 当前播放的文字索引
 let charIndex = 0; // 当前文字的字符索引
+let typingTimer = null;
+
+function showMainContentImmediately() {
+    if (introPage) {
+        introPage.style.display = "none";
+    }
+    if (mainContent) {
+        mainContent.style.display = "block";
+        mainContent.style.opacity = "1";
+    }
+}
 
 // 逐字显示效果
 function typeEffect() {
     if (charIndex < texts[textIndex].length) {
         typewriterElement.textContent += texts[textIndex].charAt(charIndex);
         charIndex++;
-        setTimeout(typeEffect, 100); // 控制显示速度
+        typingTimer = setTimeout(typeEffect, 100); // 控制显示速度
     } else {
-        setTimeout(() => {
+        typingTimer = setTimeout(() => {
             resetTypeEffect(); // 完成后重置并播放下一句
         }, 500); // 停留 0.2 秒后重置
     }
@@ -30,6 +42,10 @@ function resetTypeEffect() {
 
 // 点击特效页进入主页面
 introPage.addEventListener("click", () => {
+    sessionStorage.setItem(introSeenKey, "true");
+    if (typingTimer) {
+        clearTimeout(typingTimer);
+    }
     introPage.style.opacity = "0"; // 淡出特效页
     setTimeout(() => {
         introPage.style.display = "none"; // 完全隐藏特效页
@@ -40,5 +56,8 @@ introPage.addEventListener("click", () => {
     }, 500); // 保证淡出动画完成后再隐藏特效页
 });
 
-// 启动逐字显示特效
-typeEffect();
+if (sessionStorage.getItem(introSeenKey) === "true") {
+    showMainContentImmediately();
+} else {
+    typeEffect(); // 启动逐字显示特效
+}

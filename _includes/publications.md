@@ -1,32 +1,53 @@
-<h2 id="publications" style="margin: 2px 0px -15px; display: flex; align-items: baseline;">
-  Selected Publications
+{% assign section_title = include.title | default: "Selected Publications" %}
+{% assign section_id = include.section_id | default: "publications" %}
+{% assign show_internal_link = include.show_internal_link %}
+{% assign data_file = include.data_file | default: "publications" %}
+{% assign publications = site.data[data_file].main %}
+{% assign show_filters = include.show_filters %}
+{% assign filter_labels = include.filter_labels | default: "" | split: "|" %}
+{% assign auto_filters = "" | split: "" %}
+
+{% if show_filters and include.filter_labels == nil %}
+  {% capture collected_tags %}{% for publication in publications %}{{ publication.tags | append: "," }}{% endfor %}{% endcapture %}
+  {% assign auto_filters = collected_tags | split: "," | uniq %}
+{% endif %}
+
+<h2 id="{{ section_id }}" style="margin: 2px 0px -15px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+  {{ section_title }}
   <small style="font-size: 0.8rem; font-weight: 400; margin-left: 1em;">
+    {% if show_internal_link %}
+    <a href="{{ '/all-publications.html' | relative_url }}">(View all publications)</a>
+    {% endif %}
     {% assign scholar_link = site.social | where: "platform", "Google Scholar" | first %}
     {% if scholar_link %}
-    <a href="{{ scholar_link.url }}" target="_blank" rel="noopener">(Click for full list)</a>
+    {% if show_internal_link %}<span style="margin: 0 0.4em;">|</span>{% endif %}
+    <a href="{{ scholar_link.url }}" target="_blank" rel="noopener">(Click for Google Scholar)</a>
     {% endif %}
   </small>
 </h2>
 
 <div class="publications">
-<!--
-  Filter buttons are optional. You can customize them here or remove them.
-  To use them, ensure your publications in _data/publications.yml have the corresponding 'tags'.
--->
-<!--
+{% if show_filters %}
 <div id="filters" class="filters">
   <button class="btn active" data-filter="*">All</button>
-  <button class="btn" data-filter="World Model">World Model</button>
-  <button class="btn" data-filter="Embodied AI">Embodied AI</button>
-  <button class="btn" data-filter="Multimodal Learning">Multimodal Learning</button>
-  </div>
--->
+  {% assign filters_to_render = filter_labels %}
+  {% if include.filter_labels == nil %}
+  {% assign filters_to_render = auto_filters %}
+  {% endif %}
+  {% for filter_label in filters_to_render %}
+  {% assign trimmed_label = filter_label | strip %}
+  {% if trimmed_label != "" %}
+  <button class="btn" data-filter="{{ trimmed_label }}">{{ trimmed_label }}</button>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
 <ol class="bibliography">
 
-{% for link in site.data.publications.main %}
+{% for link in publications %}
 {% assign primary_link = link.url | default: link.page | default: link.pdf %}
 
-<li data-tags="{{ link.tags | join: ', ' }}">
+<li data-tags="{{ link.tags }}">
 <div class="pub-row">
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
   {% if link.image %}

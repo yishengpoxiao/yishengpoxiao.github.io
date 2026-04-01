@@ -33,21 +33,32 @@
     </head>
 
     <body>
+    {% assign show_intro = true %}
+    {% if page.show_intro == false %}
+    {% assign show_intro = false %}
+    {% endif %}
+    {% assign is_all_publications_page = false %}
+    {% if page.url == '/all-publications.html' %}
+    {% assign is_all_publications_page = true %}
+    {% endif %}
+
+    {% if show_intro %}
     <!-- Intro Page -->
     <div id="intro-page">
         <!-- Fixed Text -->
-        <p class="intro-title">Welcome to {{ site.title }}'s Webpage</p>
+        <p class="intro-title">{{ site.title }}</p>
 
         <div class="intro-typewriter">
             <span id="typewriter"></span><span class="cursor">|</span>
         </div>
 
         <!-- Hint Text -->
-        <p class="intro-hint">click to continue</p>
+        <p class="intro-hint">Click to enter the site.</p>
     </div>
+    {% endif %}
 
     <!-- Main Content -->
-    <div id="main-content">
+    <div id="main-content"{% unless show_intro %} style="display: block; opacity: 1;"{% endunless %}>
         <div class="wrapper">
         <header>
         {% if site.avatar %}
@@ -89,7 +100,13 @@
         <ul>
             <li><a href="#about-me">About Me</a></li>
             <li><a href="#news">News</a></li>
-            <li><a href="#publications">Publications</a></li>
+            {% if is_all_publications_page %}
+            <li><a href="{{ '/#publications' | relative_url }}">Selected Publications</a></li>
+            <li><a href="#all-publications">All Publications</a></li>
+            {% else %}
+            <li><a href="#publications">Selected Publications</a></li>
+            <li><a href="{{ '/all-publications.html' | relative_url }}">All Publications</a></li>
+            {% endif %}
         </ul>
 
         </header>
@@ -109,7 +126,9 @@
 
     <script src="./assets/js/scale.fix.js"></script>
     <script src="./assets/js/favicon-switcher.js"></script>
+    {% if show_intro %}
     <script src="./assets/js/intro-animation.js"></script>
+    {% endif %}
     {% if site.google_analytics %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
     <script>
