@@ -5,7 +5,7 @@ main:
     code: "https://doi.org/10.57760/sciencedb.17354"
     # page: "#"
     image: "./assets/img/pub/li2024diffusion.png"
-    notes: "Scientific Data (Nature)"
+    notes: "Scientific Data (Springer)"
     tags: "Diffusion MRI, White Matter Atlas, Cross-population Study"
     bibtex: "/assets/bibs/li2024diffusion.bib"
 

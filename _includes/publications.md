@@ -6,6 +6,8 @@
 {% assign show_filters = include.show_filters %}
 {% assign filter_labels = include.filter_labels | default: "" | split: "|" %}
 {% assign auto_filters = "" | split: "" %}
+{% assign enable_pagination = include.enable_pagination %}
+{% assign items_per_page = include.items_per_page | default: 5 %}
 
 {% if show_filters and include.filter_labels == nil %}
   {% capture collected_tags %}{% for publication in publications %}{{ publication.tags | append: "," }}{% endfor %}{% endcapture %}
@@ -26,9 +28,9 @@
   </small>
 </h2>
 
-<div class="publications">
+<div class="publications" data-enable-pagination="{{ enable_pagination }}" data-items-per-page="{{ items_per_page }}">
 {% if show_filters %}
-<div id="filters" class="filters">
+<div class="filters">
   <button class="btn active" data-filter="*">All</button>
   {% assign filters_to_render = filter_labels %}
   {% if include.filter_labels == nil %}
@@ -47,7 +49,7 @@
 {% for link in publications %}
 {% assign primary_link = link.url | default: link.page | default: link.pdf %}
 
-<li data-tags="{{ link.tags }}">
+<li data-tags="{{ link.tags | escape }}">
 <div class="pub-row">
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
   {% if link.image %}
@@ -104,4 +106,7 @@
 {% endfor %}
 
 </ol>
+{% if enable_pagination %}
+<div class="publication-pagination" aria-label="Publication pagination"></div>
+{% endif %}
 </div>
