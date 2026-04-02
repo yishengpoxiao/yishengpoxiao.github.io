@@ -14,6 +14,31 @@
     {% if site.canonical %}
     <link rel="canonical" href="{{ site.canonical }}" />
     {% endif %}
+    <script>
+        (function () {
+            var storageKey = 'site-theme-mode';
+            window.siteAutoDarkMode = {{ site.auto_dark_mode | jsonify }};
+            var defaultMode = window.siteAutoDarkMode ? 'auto' : 'light';
+            var mode = defaultMode;
+
+            try {
+                var storedMode = window.localStorage.getItem(storageKey);
+                if (storedMode === 'auto' || storedMode === 'light' || storedMode === 'dark') {
+                    mode = storedMode;
+                }
+            } catch (error) {
+                mode = defaultMode;
+            }
+
+            var hour = new Date().getHours();
+            var effectiveTheme = mode === 'auto'
+                ? (hour >= 7 && hour < 19 ? 'light' : 'dark')
+                : mode;
+
+            document.documentElement.setAttribute('data-theme-mode', mode);
+            document.documentElement.setAttribute('data-theme', effectiveTheme);
+        })();
+    </script>
 
     <link rel="icon" media="(prefers-color-scheme:dark)" href="{{ site.favicon_dark }}" type="image/png" />
     <link rel="icon" media="(prefers-color-scheme:light)" href="{{ site.favicon }}" type="image/png" />
@@ -117,6 +142,17 @@
         </ul>
         </nav>
 
+        <div class="sidebar-card sidebar-utility">
+            <div class="theme-toggle-wrap">
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-live="polite">
+                    <span class="theme-toggle-icon" aria-hidden="true">
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                    </span>
+                    <span class="theme-toggle-label">Auto</span>
+                </button>
+            </div>
+        </div>
+
         </header>
 
 
@@ -134,6 +170,7 @@
 
     <script src="./assets/js/scale.fix.js"></script>
     <script src="./assets/js/favicon-switcher.js"></script>
+    <script src="./assets/js/theme-toggle.js"></script>
     {% if show_intro %}
     <script src="./assets/js/intro-animation.js"></script>
     {% endif %}
