@@ -41,14 +41,27 @@
 <h2 id="{{ section_id }}" class="section-heading">
   {{ section_title }}
   <small class="section-heading-meta">
+    <span class="section-heading-actions">
+    {% if page.url == '/all-publications.html' %}
+    <a class="section-heading-link is-home" href="{{ '/#about-me' | relative_url }}">
+      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+      <span>Back to Home</span>
+    </a>
+    {% endif %}
     {% if show_internal_link %}
-    <a href="{{ '/all-publications.html' | relative_url }}">(View all publications)</a>
+    <a class="section-heading-link is-primary" href="{{ '/all-publications.html' | relative_url }}">
+      <i class="fa-solid fa-books" aria-hidden="true"></i>
+      <span>View All Publications</span>
+    </a>
     {% endif %}
     {% assign scholar_link = site.social | where: "platform", "Google Scholar" | first %}
     {% if scholar_link %}
-    {% if show_internal_link %}<span style="margin: 0 0.4em;">|</span>{% endif %}
-    <a href="{{ scholar_link.url }}" target="_blank" rel="noopener">(Click for Google Scholar)</a>
+    <a class="section-heading-link is-scholar" href="{{ scholar_link.url }}" target="_blank" rel="noopener">
+      <i class="ai ai-google-scholar" aria-hidden="true"></i>
+      <span>Google Scholar</span>
+    </a>
     {% endif %}
+    </span>
   </small>
 </h2>
 

@@ -34,12 +34,25 @@
     <span class="research-inline-note">Click a topic to filter publications.</span>
   </div>
 
-  <div class="research-inline-list">
+  <div class="research-inline-list" data-research-scroll-list>
     {% for topic in ordered_topics %}
       {% assign trimmed_topic = topic | strip %}
       {% if trimmed_topic != "" %}
       <a class="research-pill" href="{{ '/all-publications.html' | relative_url }}?filter={{ trimmed_topic | uri_escape }}#all-publications">{{ trimmed_topic }}</a>
       {% endif %}
     {% endfor %}
+  </div>
+
+  <div class="research-inline-slider-wrap" data-research-scrollbar hidden>
+    <input
+      class="research-inline-slider"
+      type="range"
+      min="0"
+      max="0"
+      value="0"
+      step="1"
+      aria-label="Scroll research interests"
+      data-research-scroll-slider
+    >
   </div>
 </div>
