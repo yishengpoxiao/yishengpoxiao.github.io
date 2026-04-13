@@ -183,8 +183,51 @@
         gtag('config', '{{ site.google_analytics }}');
     </script>
     {% endif %}
-    <a id="back-to-top"></a>
+    {% if site.email %}
+    <button id="feedback-button" class="floating-action-button" type="button"
+        aria-label="Open feedback form" title="Open feedback form"></button>
+    <div id="feedback-modal" class="feedback-modal" aria-hidden="true">
+        <div class="feedback-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title"
+            aria-describedby="feedback-modal-description">
+            <button type="button" class="feedback-modal__close" data-feedback-close aria-label="Close feedback form">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <h2 id="feedback-modal-title">Send Feedback</h2>
+            <p id="feedback-modal-description">Share a suggestion, bug report, or a quick note directly from the site.</p>
+            <form id="feedback-form" class="feedback-form"
+                data-endpoint="https://formsubmit.co/ajax/{{ site.email | uri_escape }}">
+                <input type="hidden" name="_url" value="{{ site.url }}">
+                <input type="text" name="_honey" class="feedback-form__honeypot" tabindex="-1" autocomplete="off">
+
+                <div class="feedback-form__field">
+                    <label for="feedback-name">Name</label>
+                    <input id="feedback-name" name="name" type="text" maxlength="120" placeholder="Your name">
+                </div>
+
+                <div class="feedback-form__field">
+                    <label for="feedback-subject">Subject</label>
+                    <input id="feedback-subject" name="_subject" type="text" maxlength="160"
+                        placeholder="What is this feedback about?" required>
+                </div>
+
+                <div class="feedback-form__field">
+                    <label for="feedback-message">Feedback</label>
+                    <textarea id="feedback-message" name="message" rows="6" maxlength="4000"
+                        placeholder="Tell me what you found, what can be improved, or what went wrong."
+                        required></textarea>
+                </div>
+
+                <div class="feedback-form__actions">
+                    <p id="feedback-status" class="feedback-form__status" role="status" aria-live="polite"></p>
+                    <button type="submit" class="feedback-form__submit">Send Feedback</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+    <a id="back-to-top" class="floating-action-button" href="#" aria-label="Back to top" title="Back to top"></a>
     <script src="./assets/js/back-to-top.js"></script>
+    <script src="./assets/js/feedback-form.js"></script>
     <script src="./assets/js/pub-filter.js"></script>
     <script src="./assets/js/research-interest-slider.js"></script>
 
