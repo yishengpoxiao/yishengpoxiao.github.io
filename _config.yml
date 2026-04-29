@@ -35,6 +35,12 @@ social:
       icon: "ai ai-google-scholar",
       font_size: "1.3rem",
     }
+  - {
+      platform: "ORCID",
+      url: "https://orcid.org/0009-0002-4563-4173",
+      icon: "ai ai-orcid",
+      font_size: "1.3rem",
+    }
   # - {
   #     platform: "LinkedIn",
   #     url: "https://www.linkedin.com/in/yourusername/",
