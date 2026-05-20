@@ -1931,8 +1931,11 @@ h2[id] {
 }
 
 .news-ticker-container {
-    max-height: 220px;
+    max-height: 188px;
     height: auto;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(140, 0, 0, 0.24) transparent;
     padding: 18px 20px;
     border-radius: 18px;
     background: linear-gradient(180deg, #faf7f2 0%, #f4efe7 100%);
@@ -2386,7 +2389,7 @@ screen and (max-width: 960px) {
     }
 
     .news-ticker-container {
-        max-height: none;
+        max-height: 260px;
     }
 
     .pub-row {
