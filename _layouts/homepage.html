@@ -72,6 +72,9 @@
     <div id="intro-page">
         <!-- Fixed Text -->
         <p class="intro-title">{{ site.title }}</p>
+        {% if site.chinese_name %}
+        <p class="intro-chinese-name">{{ site.chinese_name }}</p>
+        {% endif %}
 
         <div class="intro-typewriter">
             <span id="typewriter"></span><span class="cursor">|</span>
@@ -92,6 +95,9 @@
         {% endif %}
 
         <h1>{{ site.title }}</h1>
+        {% if site.chinese_name %}
+        <p class="sidebar-chinese-name">{{ site.chinese_name }}</p>
+        {% endif %}
 
         <div class="sidebar-meta">
         {% if site.position %}

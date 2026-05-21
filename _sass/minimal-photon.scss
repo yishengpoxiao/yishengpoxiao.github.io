@@ -1503,6 +1503,15 @@ footer {
     font-size: 2rem;
 }
 
+.sidebar-chinese-name {
+    margin: -4px 0 12px;
+    color: var(--global-theme-color);
+    font-family: "Songti SC", "Noto Serif SC", "Source Han Serif SC", SimSun, serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
 .sidebar-meta {
     display: grid;
     gap: 0.45rem;
@@ -2330,7 +2339,12 @@ screen and (max-width: 960px) {
     .sidebar-profile h1 {
         font-size: 1.85rem;
         color: #8C0000;
-        margin: 6px 0 12px;
+        margin: 6px 0 10px;
+    }
+
+    .sidebar-chinese-name {
+        margin-bottom: 12px;
+        font-size: 1.1rem;
     }
 
     .sidebar-profile h1::after {
