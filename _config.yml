@@ -20,10 +20,6 @@ canonical: https://yishengpoxiao.github.io/
 
 # Analytics
 google_analytics: G-X4TZ44T44J
-visitor_globe:
-  # Create a ClustrMaps globe and paste the value after "?d=" here.
-  # Historical visitor locations are supplied by ClustrMaps, not stored in this static site.
-  clustrmaps_id: rZEW4Dp3L7EfsdeY1dJ_M1XB86pQSxXMJTqZLZpOEss
 
 # Links
 # If you don't need one of them, you may delete the corresponding line.
