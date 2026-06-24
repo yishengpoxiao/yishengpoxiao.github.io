@@ -1,7 +1,7 @@
 # Basic Information
 title: Yijie Li
 chinese_name: 李轶杰
-position: Ph.D. Candidate
+position: Ph.D. Student
 affiliation: University of Electronic Science and Technology of China
 affiliation_link: http://www.uestc.edu.cn
 email: yijie_li@std.uestc.edu.cn
@@ -15,7 +15,7 @@ plugins:
 # Search Engine Optimization (SEO)
 # The following information is used to improve the website traffic from search engines, e.g., Google.
 keywords: Yijie Li, 李轶杰, UESTC, diffusion MRI, tractography, medical image analysis, neuroimaging
-description: Yijie Li (李轶杰) is a Ph.D. candidate at UESTC working on diffusion MRI, tractography, and deep learning methods for neuroimaging.
+description: Yijie Li (李轶杰) is a Ph.D. student at UESTC working on diffusion MRI, tractography, and deep learning methods for neuroimaging.
 canonical: https://yishengpoxiao.github.io/
 
 # Analytics

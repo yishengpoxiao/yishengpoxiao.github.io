@@ -113,3 +113,213 @@ html[data-theme="dark"] .publications ol.bibliography li .links a.btn { color: #
         height: 180px;
     }
 }
+
+/* Publication-page refinement, shared by Selected and All Publications. */
+.publications {
+    margin-top: 1.25rem;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 0 1.2rem;
+    margin-bottom: 1.4rem;
+    border-bottom: 1px solid rgba(107, 82, 62, 0.12);
+}
+
+.filters .btn,
+.publications .links a.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 2rem;
+    border-radius: 999px;
+    box-sizing: border-box;
+    font-size: 0.78rem !important;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.filters .btn {
+    padding: 0.38rem 0.78rem;
+    color: #6b2a25;
+    border: 1px solid rgba(140, 0, 0, 0.20);
+    background: #fff;
+}
+
+.filters .btn:hover,
+.filters .btn:focus-visible,
+.filters .btn.active {
+    color: #fff;
+    border-color: #8C0000;
+    background: #8C0000;
+    text-decoration: none;
+}
+
+.publications ol.bibliography {
+    display: grid;
+    gap: 1rem;
+}
+
+.publications ol.bibliography li.publication-item {
+    padding: 1.15rem;
+    border: 1px solid rgba(107, 82, 62, 0.13);
+    border-radius: 14px;
+    background: linear-gradient(135deg, #ffffff 0%, #fffdfb 100%);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.publications ol.bibliography li.publication-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(140, 0, 0, 0.24);
+    box-shadow: 0 12px 26px -22px rgba(58, 34, 20, 0.48);
+}
+
+.publications .pub-row {
+    gap: 1.2rem;
+}
+
+.publications ol.bibliography li .teaser {
+    height: 132px;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.publications ol.bibliography li .abbr abbr {
+    top: 10px;
+    left: 10px;
+    padding: 0.35rem 0.6rem;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(58, 34, 20, 0.16);
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
+}
+
+.publication-title,
+.publications ol.bibliography li .title {
+    color: #2b2320;
+    font-size: 1.03rem;
+    line-height: 1.48;
+}
+
+.publication-title a {
+    color: #5f1713;
+}
+
+.publication-year-inline {
+    display: inline-flex;
+    margin-left: 0.45rem;
+    padding: 0.08rem 0.42rem;
+    border-radius: 999px;
+    background: rgba(140, 0, 0, 0.08);
+    color: #7b1d18;
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.publications .periodical {
+    margin-top: 0.2rem;
+    color: #665e58;
+    font-size: 0.92rem;
+}
+
+.publications .links {
+    margin-top: 0.75rem;
+}
+
+.publications .links a.btn {
+    color: #6b2a25;
+    border: 1px solid rgba(140, 0, 0, 0.24);
+    padding: 0.3rem 0.62rem;
+    background: #fff;
+}
+
+.publications .links a.btn:hover {
+    color: #fff;
+    border-color: #8C0000;
+    background: #8C0000;
+    transform: translateY(-1px);
+}
+
+.publication-pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.6rem;
+}
+
+.publication-pagination button {
+    min-width: 2.15rem;
+    min-height: 2.15rem;
+    border: 1px solid rgba(140, 0, 0, 0.20);
+    border-radius: 7px;
+    color: #6b2a25;
+    background: #fff;
+    cursor: pointer;
+}
+
+.publication-pagination button:hover,
+.publication-pagination button.active {
+    color: #fff;
+    background: #8C0000;
+    border-color: #8C0000;
+}
+
+html[data-theme="dark"] .filters,
+html[data-theme="dark"] .publications ol.bibliography li.publication-item {
+    border-color: rgba(255, 255, 255, 0.13);
+}
+
+html[data-theme="dark"] .filters .btn,
+html[data-theme="dark"] .publications .links a.btn,
+html[data-theme="dark"] .publication-pagination button {
+    color: #ffd1c7;
+    background: #251d1c;
+    border-color: rgba(255, 183, 177, 0.35);
+}
+
+html[data-theme="dark"] .filters .btn.active,
+html[data-theme="dark"] .filters .btn:hover,
+html[data-theme="dark"] .publications .links a.btn:hover,
+html[data-theme="dark"] .publication-pagination button:hover,
+html[data-theme="dark"] .publication-pagination button.active {
+    color: #241817;
+    background: #ffb7b1;
+    border-color: #ffb7b1;
+}
+
+html[data-theme="dark"] .publications ol.bibliography li.publication-item {
+    background: linear-gradient(135deg, #261f1e 0%, #1f1918 100%);
+}
+
+html[data-theme="dark"] .publication-title,
+html[data-theme="dark"] .publications ol.bibliography li .title,
+html[data-theme="dark"] .publication-title a {
+    color: #f6eeea;
+}
+
+html[data-theme="dark"] .publications .periodical {
+    color: #c9c0bb;
+}
+
+html[data-theme="dark"] .publication-year-inline {
+    color: #ffd1c7;
+    background: rgba(255, 183, 177, 0.14);
+}
+
+@media print, screen and (max-width: 640px) {
+    .filters {
+        gap: 0.4rem;
+    }
+
+    .filters .btn {
+        padding: 0.34rem 0.65rem;
+    }
+
+    .publications ol.bibliography li.publication-item {
+        padding: 0.9rem;
+    }
+}

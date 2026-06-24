@@ -62,3 +62,155 @@
     opacity: 0;
     transition: opacity 1s ease;
 }
+
+/* Homepage polish: retains the original warm visual language while improving hierarchy. */
+body {
+    background:
+        radial-gradient(circle at top left, rgba(140, 0, 0, 0.055), transparent 30rem),
+        #F9F8F4;
+}
+
+.wrapper.page-shell {
+    padding-top: 34px;
+    padding-bottom: 64px;
+}
+
+.site-main {
+    min-width: 0;
+}
+
+.section-block {
+    margin-bottom: 28px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    padding: 36px 40px;
+    margin-bottom: 0;
+    border: 1px solid rgba(107, 82, 62, 0.10);
+    box-shadow: 0 14px 32px -26px rgba(58, 34, 20, 0.34);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: linear-gradient(180deg, #8C0000 0%, rgba(140, 0, 0, 0.15) 100%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px -28px rgba(58, 34, 20, 0.42);
+}
+
+.card:hover::before,
+.card-feature::before {
+    opacity: 1;
+}
+
+.card-feature {
+    background: linear-gradient(145deg, #ffffff 0%, #fffdfb 100%);
+}
+
+.card h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.35rem;
+}
+
+.card h2::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, rgba(140, 0, 0, 0.20), transparent);
+}
+
+.profile-lead {
+    max-width: 74ch;
+    font-size: 1.04rem;
+    line-height: 1.78;
+    color: #3f3a36;
+}
+
+.sidebar-card {
+    border: 1px solid rgba(107, 82, 62, 0.11);
+    box-shadow: 0 12px 28px -24px rgba(58, 34, 20, 0.36);
+}
+
+.sidebar-profile {
+    padding: 28px 26px 24px;
+}
+
+.sidebar-profile h1 {
+    margin-bottom: 8px;
+}
+
+.sidebar-meta {
+    line-height: 1.45;
+}
+
+.sidebar-nav ul a {
+    border-radius: 10px;
+}
+
+.sidebar-nav ul a:hover,
+.sidebar-nav ul a:focus-visible {
+    background: rgba(140, 0, 0, 0.07);
+}
+
+.news-ticker-container {
+    border: 1px solid rgba(140, 0, 0, 0.09);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(250, 247, 243, 0.88));
+}
+
+.news-ticker li {
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(107, 82, 62, 0.09);
+}
+
+.news-ticker li:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+@media print, screen and (max-width: 960px) {
+    .wrapper.page-shell {
+        padding-top: 74px;
+    }
+
+    .section-block {
+        margin-bottom: 20px;
+    }
+
+    .card {
+        padding: 28px 24px;
+    }
+}
+
+/* Shared dark-mode treatment for every page. */
+html[data-theme="dark"] body {
+    background:
+        radial-gradient(circle at top left, rgba(255, 183, 177, 0.08), transparent 30rem),
+        #161212;
+}
+
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .sidebar-card {
+    background: rgba(31, 25, 24, 0.96);
+    border-color: rgba(255, 255, 255, 0.11);
+    box-shadow: 0 14px 32px -26px rgba(0, 0, 0, 0.65);
+}
+
+html[data-theme="dark"] .card-feature,
+html[data-theme="dark"] .news-ticker-container {
+    background: linear-gradient(145deg, rgba(39, 30, 29, 0.98), rgba(28, 23, 22, 0.98));
+}
+
+html[data-theme="dark"] .news-ticker li {
+    border-color: rgba(255, 255, 255, 0.10);
+}
