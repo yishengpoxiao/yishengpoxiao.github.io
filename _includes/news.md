@@ -3,7 +3,7 @@
         {% for item in site.data.news %}
         <li class="news-item hover-panel">
             <div class="news-item-main">
-                <strong>[{{ item.date }}]</strong>
+                <span class="news-item-date">{{ item.date }}</span>
                 <span class="news-item-text">{{ item.content }}</span>
             </div>
             {% if item.url %}

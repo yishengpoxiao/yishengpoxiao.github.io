@@ -39,7 +39,10 @@
 {% endif %}
 
 <h2 id="{{ section_id }}" class="section-heading">
-  {{ section_title }}
+  <span class="section-heading-text">
+    <i class="fa-solid fa-book" aria-hidden="true"></i>
+    {{ section_title }}
+  </span>
   <small class="section-heading-meta">
     <span class="section-heading-actions">
     {% if page.url == '/all-publications.html' %}
@@ -92,10 +95,10 @@
   {% if link.image %}
   {% if primary_link %}
   <a href="{{ primary_link }}" target="_blank" rel="noopener noreferrer" aria-label="Open publication: {{ link.title }}">
-    <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" alt="{{ link.title }}">
+    <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" alt="{{ link.title }}" loading="lazy" decoding="async">
   </a>
   {% else %}
-    <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" alt="{{ link.title }}">
+    <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" alt="{{ link.title }}" loading="lazy" decoding="async">
   {% endif %}
   {% if link.conference_short %}
   <abbr class="badge">{{ link.conference_short }}</abbr>
@@ -138,7 +141,9 @@
       {% endif %}
     </div>
     {% if link.notes %}
-    <div class="publication-notes"><strong><i>{{ link.notes }}</i></strong></div>
+    <div class="publication-notes">
+      <span class="venue-badge"><i class="fa-solid fa-book-open" aria-hidden="true"></i>{{ link.notes }}</span>
+    </div>
     {% endif %}
   </div>
 </div>

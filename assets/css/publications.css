@@ -115,9 +115,9 @@ html[data-theme="dark"] .publications ol.bibliography li .links a.btn { color: #
 }
 
 /* Publication-page refinement, shared by Selected and All Publications. */
-.publications {
-    margin-top: 1.25rem;
-}
+/* Note: no top margin on `.publications` — every card's internal top
+   spacing must stay identical so same-level section headings align
+   across cards. */
 
 .filters {
     display: flex;

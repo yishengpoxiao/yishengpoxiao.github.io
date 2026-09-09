@@ -5,7 +5,7 @@ layout: homepage
 <div id="about-me" class="section-block">
 <div class="card card-feature" markdown="1">
 
-## Profile
+<h2><i class="fa-solid fa-circle-user" aria-hidden="true"></i><span>Profile</span></h2>
 
 I am **Yijie Li (李轶杰)**, a **Ph.D. student** in Information and Communication Engineering at the **[University of Electronic Science and Technology of China](https://en.uestc.edu.cn/)**, advised by **[Prof. Fan Zhang](https://scholar.google.com/citations?user=kTd978wAAAAJ)**.
 
@@ -25,7 +25,7 @@ My research focuses on **diffusion MRI** and **tractography** for studying **bra
 <div id="news" class="section-block">
 <div class="card" markdown="1">
 
-## News
+<h2><i class="fa-solid fa-bullhorn" aria-hidden="true"></i><span>News</span></h2>
 
 {% include news.md %}
 </div>

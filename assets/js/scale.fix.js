@@ -8,10 +8,10 @@
             }
         },
         initialize = function() {
-            changeViewportContent("width=device-width, minimum-scale=1.0, maximum-scale=1.0");
+            changeViewportContent("width=device-width, initial-scale=1.0");
         },
         gestureStart = function() {
-            changeViewportContent("width=device-width, minimum-scale=0.25, maximum-scale=1.6");
+            changeViewportContent("width=device-width, minimum-scale=0.25, maximum-scale=5.0");
         },
         gestureEnd = function() {
             initialize();

@@ -8,6 +8,7 @@ const mainContent = document.getElementById("main-content");
 let textIndex = 0; // 当前播放的文字索引
 let charIndex = 0; // 当前文字的字符索引
 let typingTimer = null;
+let hasEntered = false;
 
 function showMainContentImmediately() {
     if (introPage) {
@@ -28,7 +29,7 @@ function typeEffect() {
     } else {
         typingTimer = setTimeout(() => {
             resetTypeEffect(); // 完成后重置并播放下一句
-        }, 500); // 停留 0.2 秒后重置
+        }, 1200); // 停留后重置
     }
 }
 
@@ -40,12 +41,17 @@ function resetTypeEffect() {
     typeEffect(); // 重新播放
 }
 
-// 点击特效页进入主页面
-introPage.addEventListener("click", () => {
+// 进入主页面（点击 / 回车 / 空格 / Esc 均可触发）
+function enterSite() {
+    if (hasEntered) {
+        return;
+    }
+    hasEntered = true;
     sessionStorage.setItem(introSeenKey, "true");
     if (typingTimer) {
         clearTimeout(typingTimer);
     }
+    document.removeEventListener("keydown", onKeydown);
     introPage.style.opacity = "0"; // 淡出特效页
     setTimeout(() => {
         introPage.style.display = "none"; // 完全隐藏特效页
@@ -54,7 +60,17 @@ introPage.addEventListener("click", () => {
             mainContent.style.opacity = "1"; // 淡入主页面
         }, 10); // 确保 display: block 生效后再进行淡入
     }, 500); // 保证淡出动画完成后再隐藏特效页
-});
+}
+
+function onKeydown(event) {
+    if (event.key === "Enter" || event.key === " " || event.key === "Escape") {
+        event.preventDefault();
+        enterSite();
+    }
+}
+
+introPage.addEventListener("click", enterSite);
+document.addEventListener("keydown", onKeydown);
 
 if (sessionStorage.getItem(introSeenKey) === "true") {
     showMainContentImmediately();

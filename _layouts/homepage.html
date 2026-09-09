@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
     {% if site.font == "Sans Serif" %}
     <link rel="stylesheet" href="./assets/css/font_sans_serif.css">
@@ -69,7 +70,7 @@
 
     {% if show_intro %}
     <!-- Intro Page -->
-    <div id="intro-page">
+    <div id="intro-page" role="button" tabindex="0" aria-label="Enter the site">
         <!-- Fixed Text -->
         <p class="intro-title">{{ site.title }}</p>
         {% if site.chinese_name %}
@@ -81,7 +82,7 @@
         </div>
 
         <!-- Hint Text -->
-        <p class="intro-hint">Click to enter the site.</p>
+        <p class="intro-hint">Click anywhere or press Enter to continue.</p>
     </div>
     {% endif %}
 
@@ -109,7 +110,15 @@
         </a>
         {% endif %}
         {% if site.email %}
-        <email>{{ site.email }}</email>
+        <div class="sidebar-email">
+            <a class="sidebar-email-link" href="mailto:{{ site.email }}" title="Send an email">
+                <email>{{ site.email }}</email>
+            </a>
+            <button id="copy-email" class="copy-email-btn" type="button" data-email="{{ site.email }}"
+                aria-label="Copy email address" title="Copy email address">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+            </button>
+        </div>
         {% endif %}
         </div>
 
@@ -131,19 +140,19 @@
 
         <ul id="site-nav">
             {% if is_all_publications_page %}
-            <li><a href="{{ '/#about-me' | relative_url }}">About Me</a></li>
-            <li><a href="{{ '/#experience' | relative_url }}">Experience</a></li>
-            <li><a href="{{ '/#news' | relative_url }}">News</a></li>
-            <li><a href="{{ '/#publications' | relative_url }}">Selected Publications</a></li>
-            <li><a href="{{ '/#awards' | relative_url }}">Awards</a></li>
-            <li><a href="#all-publications">All Publications</a></li>
+            <li><a href="{{ '/#about-me' | relative_url }}"><i class="fa-solid fa-circle-user" aria-hidden="true"></i><span>About Me</span></a></li>
+            <li><a href="{{ '/#experience' | relative_url }}"><i class="fa-solid fa-briefcase" aria-hidden="true"></i><span>Experience</span></a></li>
+            <li><a href="{{ '/#news' | relative_url }}"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i><span>News</span></a></li>
+            <li><a href="{{ '/#publications' | relative_url }}"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Selected Publications</span></a></li>
+            <li><a href="{{ '/#awards' | relative_url }}"><i class="fa-solid fa-trophy" aria-hidden="true"></i><span>Awards</span></a></li>
+            <li><a href="#all-publications"><i class="fa-solid fa-book" aria-hidden="true"></i><span>All Publications</span></a></li>
             {% else %}
-            <li><a href="#about-me">About Me</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#publications">Selected Publications</a></li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="{{ '/all-publications.html' | relative_url }}">All Publications</a></li>
+            <li><a href="#about-me"><i class="fa-solid fa-circle-user" aria-hidden="true"></i><span>About Me</span></a></li>
+            <li><a href="#experience"><i class="fa-solid fa-briefcase" aria-hidden="true"></i><span>Experience</span></a></li>
+            <li><a href="#news"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i><span>News</span></a></li>
+            <li><a href="#publications"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Selected Publications</span></a></li>
+            <li><a href="#awards"><i class="fa-solid fa-trophy" aria-hidden="true"></i><span>Awards</span></a></li>
+            <li><a href="{{ '/all-publications.html' | relative_url }}"><i class="fa-solid fa-book" aria-hidden="true"></i><span>All Publications</span></a></li>
             {% endif %}
         </ul>
         </nav>
@@ -236,36 +245,7 @@
     <script src="./assets/js/feedback-form.js"></script>
     <script src="./assets/js/pub-filter.js"></script>
     <script src="./assets/js/research-interest-slider.js"></script>
-
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuBtn = document.getElementById('mobile-menu-btn');
-            const header = document.querySelector('header');
-            const nav = document.getElementById('site-nav');
-
-            // 点击按钮切换菜单状态
-            menuBtn.addEventListener('click', function () {
-                header.classList.toggle('nav-open');
-                menuBtn.classList.toggle('active');
-                const isOpen = header.classList.contains('nav-open');
-                menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                nav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-            });
-
-            // 点击导航链接后自动收起菜单
-            const navLinks = document.querySelectorAll('header ul a');
-            navLinks.forEach(function (link) {
-                link.addEventListener('click', function () {
-                    header.classList.remove('nav-open');
-                    menuBtn.classList.remove('active');
-                    menuBtn.setAttribute('aria-expanded', 'false');
-                    nav.setAttribute('aria-hidden', 'true');
-                });
-            });
-        });
-    </script>
+    <script src="./assets/js/site-enhancements.js"></script>
 
 </body>
 

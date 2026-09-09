@@ -1,4 +1,4 @@
-<h2 id="experience">Experience</h2>
+<h2 id="experience"><i class="fa-solid fa-briefcase" aria-hidden="true"></i><span>Experience</span></h2>
 
 <div class="experience">
   <ol class="experience-list">

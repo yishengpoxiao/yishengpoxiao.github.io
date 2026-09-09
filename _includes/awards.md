@@ -1,4 +1,4 @@
-<h2 id="awards">Awards</h2>
+<h2 id="awards"><i class="fa-solid fa-trophy" aria-hidden="true"></i><span>Awards</span></h2>
 
 <div class="awards">
   {% if site.data.awards.main and site.data.awards.main.size > 0 %}
