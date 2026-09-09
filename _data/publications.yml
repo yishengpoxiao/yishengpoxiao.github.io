@@ -7,6 +7,7 @@ main:
     image: "./assets/img/pub/li2024diffusion.png"
     year: "2024"
     notes: "Scientific Data (Springer)"
+    journal_url: "https://www.nature.com/sdata/"
     bibtex: "/assets/bibs/li2024diffusion.bib"
 
   - title: "DDTracking: A Diffusion Model-Based Deep Generative Framework with Local-Global Spatiotemporal Modeling for Diffusion MRI Tractography "
@@ -16,6 +17,7 @@ main:
     image: "./assets/img/pub/li2026ddtracking.jpg"
     year: "2026"
     notes: "Medical Image Analysis (Elsevier)"
+    journal_url: "https://www.sciencedirect.com/journal/medical-image-analysis"
     bibtex: "/assets/bibs/li2026ddtracking.bib"
 
   - title: "Cross-Population White Matter Atlas Creation for Concurrent Mapping of Brain Connections in Neonates and Adults with Diffusion MRI Tractography"
@@ -25,4 +27,5 @@ main:
     image: "./assets/img/pub/zhang2026cross.jpg"
     year: "2026"
     notes: "Fundamental Research (Elsevier)"
+    journal_url: "https://www.sciencedirect.com/journal/fundamental-research"
     bibtex: "/assets/bibs/zhang2026cross.bib"

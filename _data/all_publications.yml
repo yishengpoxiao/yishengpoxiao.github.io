@@ -6,6 +6,7 @@ main:
     image: "./assets/img/pub/li2026ddtracking.jpg"
     year: "2026"
     notes: "Medical Image Analysis (Elsevier)"
+    journal_url: "https://www.sciencedirect.com/journal/medical-image-analysis"
     tags: "Diffusion MRI, Tractography, Deep Learning, First/Co-First Author, Journal"
     bibtex: "/assets/bibs/li2026ddtracking.bib"
 
@@ -16,6 +17,7 @@ main:
     image: "./assets/img/pub/zhang2026cross.jpg"
     year: "2026"
     notes: "Fundamental Research (Elsevier)"
+    journal_url: "https://www.sciencedirect.com/journal/fundamental-research"
     tags: "Diffusion MRI, Tractography, Structural Connectivity, Population and Clinical Studies, First/Co-First Author, Journal"
     bibtex: "/assets/bibs/zhang2026cross.bib"
 
@@ -26,6 +28,7 @@ main:
     image: "./assets/img/pub/li2024diffusion.png"
     year: "2024"
     notes: "Scientific Data (Springer)"
+    journal_url: "https://www.nature.com/sdata/"
     tags: "Diffusion MRI, Tractography, Structural Connectivity, Population and Clinical Studies, First/Co-First Author, Journal"
     bibtex: "/assets/bibs/li2024diffusion.bib"
 
@@ -36,6 +39,7 @@ main:
     image: "./assets/img/pub/zhang2026study.jpg"
     year: "2026"
     notes: "Neuroimage: Clinical (Elsevier)"
+    journal_url: "https://www.sciencedirect.com/journal/neuroimage-clinical"
     tags: "Diffusion MRI, Tractography, Structural Connectivity, Population and Clinical Studies, Journal"
     bibtex: "/assets/bibs/zhang2026study.bib"
 
@@ -46,6 +50,7 @@ main:
     image: "./assets/img/pub/cao2025free.jpg"
     year: "2025"
     notes: "Human Brain Mapping (Wiley Online Library)"
+    journal_url: "https://onlinelibrary.wiley.com/journal/10974628"
     tags: "Diffusion MRI, Tractography, Population and Clinical Studies, Journal"
     bibtex: "/assets/bibs/cao2025free.bib"
 
@@ -56,6 +61,7 @@ main:
     image: "./assets/img/pub/zheng2025agfs.jpg"
     year: "2025"
     notes: "Medical Image Analysis (Elsevier)"
+    journal_url: "https://www.sciencedirect.com/journal/medical-image-analysis"
     tags: "Diffusion MRI, Tractography, Population and Clinical Studies, Computational Neuroimaging, Journal"
     bibtex: "/assets/bibs/zheng2025agfs.bib"
 
@@ -66,6 +72,7 @@ main:
     image: "./assets/img/pub/guo2025dmvfc.jpg"
     year: "2025"
     notes: "IEEE Journal of Selected Topics in Signal Processing (IEEE)"
+    journal_url: "https://signalprocessingsociety.org/publications-resources/ieee-journal-selected-topics-signal-processing"
     tags: "Diffusion MRI, Tractography, Deep Learning, Journal"
     bibtex: "/assets/bibs/guo2025dmvfc.bib"
 
@@ -76,6 +83,7 @@ main:
     image: "./assets/img/pub/wang2025novel.jpg"
     year: "2025"
     notes: "MICCAI 2025 (Springer)"
+    journal_url: "https://conferences.miccai.org/2025/"
     tags: "Diffusion MRI, Tractography, Deep Learning, Conference"
     bibtex: "/assets/bibs/wang2025novel.bib"
 
@@ -86,6 +94,7 @@ main:
     image: "./assets/img/pub/zhang2025segmentation.png"
     year: "2025"
     notes: "Journal of Data Acquisition and Processing"
+    journal_url: "https://d.wanfangdata.com.cn/periodical/sjcjycl"
     tags: "Diffusion MRI, Tractography, Computational Neuroimaging, Journal"
     bibtex: "/assets/bibs/zhang2025segmentation.bib"
 
@@ -96,6 +105,7 @@ main:
     image: "./assets/img/pub/wangjin2025novel.png"
     year: "2025"
     notes: "ISBI 2025 (IEEE)"
+    journal_url: "https://ieee-isbi.org/2025/"
     tags: "Diffusion MRI, Tractography, Deep Learning, Conference"
     bibtex: "/assets/bibs/wangjin2025novel.bib"
 
@@ -106,5 +116,6 @@ main:
     image: "./assets/img/pub/zhu2024diffusion.png"
     year: "2024"
     notes: "MICCAI 2024 (Springer)"
+    journal_url: "https://conferences.miccai.org/2024/"
     tags: "Diffusion MRI, Deep Learning, Conference"
     bibtex: "/assets/bibs/zhu2024diffusion.bib"

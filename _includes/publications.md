@@ -142,7 +142,14 @@
     </div>
     {% if link.notes %}
     <div class="publication-notes">
+      {% if link.journal_url %}
+      <a class="venue-badge is-link" href="{{ link.journal_url }}" target="_blank" rel="noopener noreferrer"
+        title="Visit journal / conference homepage">
+        <i class="fa-solid fa-book-open" aria-hidden="true"></i>{{ link.notes }}
+      </a>
+      {% else %}
       <span class="venue-badge"><i class="fa-solid fa-book-open" aria-hidden="true"></i>{{ link.notes }}</span>
+      {% endif %}
     </div>
     {% endif %}
   </div>
